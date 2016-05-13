@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
     @IBOutlet var textFields: [UITextField]!
     
     // return key on keyboard touched, end
@@ -22,6 +25,30 @@ class LoginViewController: UIViewController {
         for tf in textFields{
             tf.resignFirstResponder()
         }
+    }
+    
+    // login pressed
+    @IBAction func loginPressed(sender: UIButton) {
+        let ref = Firebase(url: "https://language-partner.firebaseio.com")
+        //let usersRef = ref.childByAppendingPath("users")
+        
+        let e = email.text! ?? ""
+        let p = password.text! ?? ""
+        //let user = ["email": e, "password": p]
+        //usersRef.childByAppendingPath("Jack").setValue(user)
+        
+        ref.createUser(e, password: p,
+            withValueCompletionBlock: {error, result in
+                if error != nil{
+                    
+                }
+                else {
+                    let uid = result["uid"] as? String
+                    //print("Successfully created user account with uid: \(uid)")
+                }
+                
+        })
+        
     }
     
     override func viewDidLoad() {

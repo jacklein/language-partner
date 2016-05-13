@@ -64,6 +64,7 @@
                                 <rect key="frame" x="281" y="493" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUA-x3-lbi"/>
                                     <segue destination="ofV-4b-Eln" kind="show" id="t3B-xP-0xg"/>
                                 </connections>
                             </button>
@@ -101,6 +102,8 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="email" destination="bnb-U2-w2Z" id="qgR-Qr-5sS"/>
+                        <outlet property="password" destination="gXx-om-5wf" id="i4I-Zs-2dM"/>
                         <outletCollection property="textFields" destination="bnb-U2-w2Z" collectionClass="NSMutableArray" id="aND-g2-3d4"/>
                         <outletCollection property="textFields" destination="gXx-om-5wf" collectionClass="NSMutableArray" id="xdq-j5-4pL"/>
                         <outletCollection property="textFields" destination="Amr-Eq-grX" collectionClass="NSMutableArray" id="xFU-tY-hsX"/>

@@ -1,0 +1,6 @@
+framework module Pods_LanguagePartner {
+  umbrella header "Pods-LanguagePartner-umbrella.h"
+
+  export *
+  module * { export * }
+}

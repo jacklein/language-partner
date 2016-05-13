@@ -1,0 +1,6 @@
+framework module Pods_LanguagePartnerTests {
+  umbrella header "Pods-LanguagePartnerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
